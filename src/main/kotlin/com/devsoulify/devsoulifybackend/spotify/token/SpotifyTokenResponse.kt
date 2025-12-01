@@ -1,4 +1,7 @@
 package com.devsoulify.devsoulifybackend.spotify.token
 
-class SpotifyTokenResponse {
-}
+data class SpotifyTokenResponse(
+    val access_token: String,
+    val token_type: String,
+    val expires_in: Long
+)
