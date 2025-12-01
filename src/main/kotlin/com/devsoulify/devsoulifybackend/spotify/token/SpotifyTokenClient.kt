@@ -14,6 +14,10 @@ class SpotifyTokenClient(
     @Value("\${SPOTIFY_CLIENT_SECRET}") private val clientSecret: String
 ) {
 
+    init {
+        println("DEBUG TOKEN CLIENT -> CLIENT_ID='$clientId' | CLIENT_SECRET='$clientSecret'")
+    }
+
     private val webClient = WebClient.builder()
         .baseUrl("https://accounts.spotify.com/api")
         .defaultHeaders {

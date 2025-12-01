@@ -18,7 +18,6 @@ class SpotifyApiClient(
         .baseUrl("https://api.spotify.com/v1")
         .build()
 
-    // NEW RELEASES
     suspend fun getNewReleases(): SpotifyNewReleasesResponse {
         val token = tokenService.getValidToken()
 
@@ -31,8 +30,7 @@ class SpotifyApiClient(
             .awaitSingle()
     }
 
-    // FEATURED PLAYLISTS
-    suspend fun getFeaturedPlayLists(): SpotifyFeaturedPlaylistsResponse {
+    suspend fun getFeaturedPlaylists(): SpotifyFeaturedPlaylistsResponse {
         val token = tokenService.getValidToken()
 
         return webClient.get()
@@ -44,7 +42,6 @@ class SpotifyApiClient(
             .awaitSingle()
     }
 
-    // CATEGORIES
     suspend fun getCategories(): SpotifyCategoriesResponse {
         val token = tokenService.getValidToken()
 
